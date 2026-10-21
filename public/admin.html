@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FormCraft — конструктор форм</title><link rel="stylesheet" href="/assets/styles.css"></head>
+<body><header class="topbar"><a class="brand" href="/admin" style="text-decoration:none;color:inherit"><span class="brand-mark">F</span>FormCraft</a><nav class="top-links"><a href="/admin">Мои формы</a><a href="#about">О сервисе</a></nav></header>
+<main>
+  <section class="page-head"><div><div class="eyebrow">Рабочее пространство</div><h1>Формы отклика</h1><p class="subtitle">Создавайте формы для стажировок и мероприятий без помощи разработчиков.</p></div><button class="btn btn-primary" id="new-form-btn"><span>＋</span> Создать форму</button></section>
+  <section class="stats">
+    <div class="stat"><div class="stat-label">Всего форм</div><div class="stat-value" id="stat-forms">—</div><div class="stat-note">В вашем пространстве</div></div>
+    <div class="stat"><div class="stat-label">Опубликовано</div><div class="stat-value" id="stat-published">—</div><div class="stat-note">Доступны по ссылке</div></div>
+    <div class="stat"><div class="stat-label">Получено ответов</div><div class="stat-value" id="stat-submissions">—</div><div class="stat-note">От всех форм</div></div>
+    <div class="stat"><div class="stat-label">Средняя конверсия</div><div class="stat-value" id="stat-conversion">—</div><div class="stat-note">От просмотра до отправки</div></div>
+  </section>
+  <section class="panel"><div class="panel-head"><div><h2>Ваши формы</h2><div class="muted small">Управляйте формами и смотрите ответы</div></div><button class="btn btn-secondary" id="refresh-btn">↻ Обновить</button></div><div id="forms-list" class="form-list"><div class="empty">Загружаем формы…</div></div></section>
+  <section id="editor" class="hidden" style="margin-top:24px">
+    <div class="page-head"><div><a href="#" class="back-link" id="close-editor">← К списку форм</a><h1 id="editor-heading">Новая форма</h1><p class="subtitle">Настройте вопросы и проверьте, как форма будет выглядеть для студента.</p></div><div class="toolbar"><button class="btn btn-secondary" id="save-btn">Сохранить черновик</button><button class="btn btn-primary" id="publish-btn">Опубликовать ↗</button></div></div>
+    <div id="editor-message"></div>
+    <div class="layout">
+      <section class="panel"><div class="field"><label for="form-title">Название формы *</label><input id="form-title" maxlength="120" placeholder="Например, Отклик на стажировку в маркетинге"></div><div class="field"><label for="form-description">Описание для участника</label><textarea id="form-description" maxlength="1000" placeholder="Расскажите о стажировке и о том, что нужно заполнить…"></textarea></div><div class="divider"></div><div class="panel-head"><div><h2>Вопросы формы</h2><div class="muted small">Добавьте только то, что действительно нужно узнать</div></div><span class="status" id="question-count">0 вопросов</span></div><div id="question-list"></div><button class="btn btn-secondary" id="add-question" style="width:100%">＋ Добавить вопрос</button></section>
+      <aside class="panel preview"><div class="preview-top">◉ ПРЕДВАРИТЕЛЬНЫЙ ПРОСМОТР</div><h2 id="preview-title">Название формы</h2><p id="preview-description" class="subtitle" style="font-size:13px;margin-bottom:18px">Описание формы появится здесь.</p><div id="preview-questions"></div><div class="muted small" style="margin-top:15px">* Обязательный вопрос</div></aside>
+    </div>
+    <div id="publish-result" class="panel hidden" style="margin-top:20px"></div>
+  </section>
+  <footer id="about" class="muted small" style="text-align:center;padding:32px 0 0">FormCraft · Локальный конструктор форм · Данные хранятся на вашем компьютере</footer>
+</main><div id="toast" class="toast hidden"></div><script src="/assets/admin.js"></script></body></html>
